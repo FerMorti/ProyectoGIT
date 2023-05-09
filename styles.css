@@ -1,0 +1,65 @@
+:root{
+    font-size: 62.5%;
+}
+@font-face {
+    font-family: 'OldNewspaperTypes';
+    src: url('media/OldNewspaperTypes.ttf') format('truetype'),
+    url('media/OldNewspaperTypes.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+*{
+    font-family: OldNewspaperTypes;
+}
+body{
+    font-size: 1.6rem;
+    background-image: url(../media/papelviejo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.contenido{
+    border: .1rem solid black;
+    box-shadow: 0px 0px 18px 10px rgba(0,0,0,0.75);
+    margin: 5rem;
+}
+.segunda{
+    display: flex;
+    justify-content: space-around;
+}
+.parrafos{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 2rem;
+    column-gap: 1rem;
+}
+.separador{
+    width: 85%;
+    border-color: black;
+}
+.abajo{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    padding-bottom: 2rem;
+}
+.transicion{
+    color: brown;
+    font-size: 9rem;
+    box-shadow: 5px 5px;
+    border: 1px solid red;
+    position: absolute;
+    left:30%;
+    top:35%;
+    transform: rotate(-15deg);
+    transition: 4s;
+}
+.transicion:hover{
+    transform:rotate(40deg);
+    transition-timing-function: ease-in-out;
+}
