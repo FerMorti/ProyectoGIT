@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Periodico</title>
-    <link href="" rel="stylesheet" as="tex/css">
+    <link href="styles/styles.css" rel="stylesheet" as="tex/css">
 
 </head>
 <body>
+    <div style="text-align: right;">
+    <img id="imagen" src="media/play.png" onclick="musica()">
+    <img id="imagenboton" src="media\oscuridad y.png" onclick="cambiarFondo()">
+
+    </div>
+
     <div class="contenido">
+        
+    
         <h1>El faro de motril</h1>
         <div class="segunda">
             <h3>nº001</h3>
@@ -18,7 +26,7 @@
         </div>
         <h2>Las hemerotecas digitales</h2>
         <div class="parrafos">
-            <img src="">
+            <img id="fotoaside" src="media/AYTO.-MOTRIL-removebg-preview.png">
             <p>Si bien tenemos bastantes libros y artículos que procuran retratar el pasado y acontecimientos importantes de Motril, la realidad es que tenemos poca información acerca de lo sucedido en la calles de nuestra ciudad. No solemos conocer la historia de nuestras calles, desde cuando existe una determinada calle, cuando se le dio en nombre, porque se le eligió uno y no otro, si se le ha cambiado en algún momento… </p>
             <p>Son datos importantes que nos ayudan a conocer la historia de Motril y su evolución en el tiempo. Los nombres de las calles nos pueden contar mucho sobre la historia y cultura y no son aleatorios, sino que representan señas culturales de Motril y su historia.</p>
             <p>Por tanto, los nombres de las calles de una cuidad también forman parte de su patrimonio histórico, ya que suelen recordar los nombres de las personas que en algún momento vivieron en ellas, las profesiones que en ellas se ejercieron, los grupos sociales que las habitaron, las construcciones, etc. y por eso suelen ser un recuerdo de épocas pasadas que se debe conservar con mucho cuidado como memoria y tradición en la historia de la ciudad.</p>
@@ -28,9 +36,49 @@
         </div>
         <hr class="separador">
         <div class="abajo">
-            <img src="" height="" width="">
-            <img src="" height="" width=""> 
+            <img id="foto1" src="media/plazaespana1875.jpg" height="402" width="612">
+            <img id="foto2" src="media/construcciondelpuerto.jpg" height="402" width="612"> 
         </div>
-    </div> <!--contenido-->
+    </div> 
+
+
+    <script>
+   function cambiarFondo() {
+        var fondoActual = document.body.style.backgroundImage;
+        if (fondoActual === 'url("media/papelviejo.jpg")') {
+          document.getElementById("imagenboton").src = 'media/lusss y.png';
+          document.getElementById("foto1").src = 'media/foto1modooscuro.png';
+          document.getElementById("foto2").src = 'media/foto2modooscuro.png';
+          document.getElementById("fotoaside").src = 'media/fotoasidemodooscuro.png';
+          document.body.style.backgroundImage = 'url("media/modonoche.png")';
+        } else {
+          
+          document.getElementById("foto1").src = 'media/plazaespana1875.jpg';
+          document.getElementById("foto2").src = 'media/construcciondelpuerto.jpg';
+          document.getElementById("fotoaside").src = 'media/AYTO.-MOTRIL-removebg-preview.png';
+          document.getElementById("imagenboton").src = 'media/oscuridad y.png';
+          document.body.style.backgroundImage = 'url("media/papelviejo.jpg")';
+        }
+      }
+
+
+    var audio = null; // Variable para almacenar el objeto de audio
+
+    function musica() {
+        if (audio === null || audio.paused) {
+        // Crea un elemento de audio y establece la fuente de la música si no se está reproduciendo
+        audio = new Audio('musica/musica.mp3');
+        audio.play();
+        // Cambia la imagen
+        document.getElementById('imagen').src = 'media/pause.png';
+        } else {
+        // Pausa la música si ya se está reproduciendo
+        audio.pause();
+        // Cambia la imagen
+        document.getElementById('imagen').src = 'media/play.png';
+        }
+    }
+    </script>
+
 </body>
 </html>
